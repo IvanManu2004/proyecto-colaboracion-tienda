@@ -3,10 +3,10 @@ public class Empleados {
     private int dni;
     private Producto productoAsignado;
 
-    public Empleados(String nombreEmpleado, int dniEmpleado, String nombreProducto, int precioProducto) {
+    public Empleados(String nombreEmpleado, int dniEmpleado, Producto nombreProducto) {
         nombre = nombreEmpleado;
         dni = dniEmpleado;
-        productoAsignado = new Producto(nombreProducto,precioProducto);
+        productoAsignado = nombreProducto;
     }
 
     public void setNombre(String nombre){
@@ -29,8 +29,8 @@ public class Empleados {
         return nombre;
     }
 
-    public Producto getProducto(){
-        return productoAsignado;
+        public String getNombreProducto(){
+        return productoAsignado.getNombre() + " y cuesta " + productoAsignado.getPrecio();
     }
 
     public void imprimirDetallesEmpleado(){
